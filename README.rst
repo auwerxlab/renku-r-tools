@@ -6,6 +6,8 @@ A toolbox to work with R projects on Renku
    :target: https://github.com/auwerxlab/renku-r-tools/blob/master/LICENSE
 .. image:: https://img.shields.io/github/v/release/auwerxlab/renku-r-tools
    :target: https://github.com/auwerxlab/renku-r-tools/releases
+.. image:: https://img.shields.io/pypi/v/renku-r-tools
+   :target: https://pypi.python.org/pypi/renku-r-tools
 
 Renku-r-tools is a small python package that provides a CLI to setup R projects on Renku.
 
