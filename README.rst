@@ -2,7 +2,7 @@
 A toolbox to work with R projects on Renku
 ==========================================
 
-.. image:: http://img.shields.io/badge/license-MIT-brightgreen.svg
+.. image:: http://img.shields.io/badge/license-apache2-brightgreen.svg
    :target: https://github.com/auwerxlab/renku-r-tools/blob/master/LICENSE
 .. image:: https://img.shields.io/github/v/release/auwerxlab/renku-r-tools
    :target: https://github.com/auwerxlab/renku-r-tools/releases
