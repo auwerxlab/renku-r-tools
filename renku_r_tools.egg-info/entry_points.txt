@@ -1,0 +1,3 @@
+[console_scripts]
+renku-r = renku_r_tools.__main__:cli
+
