@@ -13,7 +13,7 @@ Renku-r-tools is a small python package that provides a CLI to setup R projects 
 
 Features:
 
-- Link the packrat libraries of a R project to another location. This is useful when packrat libraries are located on the docker image.
+- Link the packrat libraries of a R project to another location. This is particularly useful when packrat libraries are located on the docker image.
 
 Installation
 ============
