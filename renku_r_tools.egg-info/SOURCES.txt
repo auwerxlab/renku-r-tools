@@ -1,4 +1,6 @@
+LICENSE
 README.rst
+install.sh
 setup.cfg
 setup.py
 renku_r_tools/__init__.py

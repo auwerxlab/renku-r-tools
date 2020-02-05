@@ -2,12 +2,18 @@
 A toolbox to work with R projects on Renku
 ==========================================
 
-.. image:: http://img.shields.io/badge/license-apache2-brightgreen.svg
+.. image:: https://img.shields.io/badge/license-apache2-brightgreen.svg
    :target: https://github.com/auwerxlab/renku-r-tools/blob/master/LICENSE
+
 .. image:: https://img.shields.io/github/v/release/auwerxlab/renku-r-tools
    :target: https://github.com/auwerxlab/renku-r-tools/releases
+
 .. image:: https://img.shields.io/pypi/v/renku-r-tools
    :target: https://pypi.python.org/pypi/renku-r-tools
+
+.. image:: https://readthedocs.org/projects/renku-r-tools/badge/?version=latest
+   :target: https://renku-r-tools.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 Renku-r-tools is a small python package that provides a CLI to setup R projects on Renku.
 
@@ -48,27 +54,4 @@ Once ``pipx`` is installed use following command to install ``renku-r-tools``.
 Usage
 =====
 
-renku-r ln_packrat_lib
-----------------------
-
-::
-
-    Usage: renku-r ln-packrat-lib [OPTIONS]
-
-      Link packrat libraries to another location.
-
-    Options:
-      -p, --proj_dir TEXT  R project main directory path. Use absolute path.
-                           [required]
-      -s, --source TEXT    Main directory path of the new packrat libraries
-                           source. Use absolute path.  [default:
-                           /home/rstudio/packrat; required]
-      --help               Show this message and exit.
-
-
-Example:
-
-::
-
-    $ renku-r ln_packrat_lib -p <your_R_project_main_directory_path> -s <your_new_packrat_library_path>
-
+The latest documentation is available on `https://readthedocs.org <https://renku-r-tools.readthedocs.io/en/latest/>`_.

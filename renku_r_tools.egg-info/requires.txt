@@ -1,3 +1,1 @@
-click
-requests
-datetime
+click>=7.0

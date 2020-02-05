@@ -15,9 +15,13 @@ def cli():
 Use absolute path.',
     required = True,
     show_default = True)
-def ln_packrat_lib(proj_dir, source):
+@click.option('-v', '--verbose',
+    is_flag = True,
+    help = 'Print various messages.')
+def ln_packrat_lib(proj_dir, source, verbose):
     packrat = Packrat(proj_dir = proj_dir)
-    packrat.ln_lib(ln_source = source)
+    packrat.ln_lib(ln_source = source,
+        verbose = verbose)
 
 if __name__ == '__main__':
     cli()

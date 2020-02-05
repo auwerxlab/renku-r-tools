@@ -7,7 +7,7 @@ class Packrat():
 
     def __init__(self, proj_dir):
         self.proj_dir = proj_dir
-        if not os.path. isdir(self.proj_dir):
+        if not os.path.isdir(self.proj_dir):
             sys.exit("'" + self.proj_dir + "' not found.")
 
         self.packrat_dir = os.path.normpath(self.proj_dir + "/packrat")
@@ -21,7 +21,7 @@ class Packrat():
                 )
             ]
 
-    def ln_lib(self, ln_source):
+    def ln_lib(self, ln_source, verbose):
         """Link libraries to another location."""
 
         if not os.path.isdir(ln_source):
@@ -32,11 +32,14 @@ class Packrat():
                 os.remove(e)
             else:
                 shutil.rmtree(e)
-            print("Removed: '" + e + "'.")
+            if verbose == True:
+                print("Removed: '" + e + "'.")
             os.symlink(
                 os.path.normpath(
                     ln_source + "/" + os.path.basename(e)
                 ),
             e)
-            print("Created symlink: ''"
-            + ln_source + "/" + os.path.basename(e) + "'.")
+            if verbose == True:
+                print("Created symlink: '" + ln_source +
+                    "/" + os.path.basename(e) +
+                    "'.")
