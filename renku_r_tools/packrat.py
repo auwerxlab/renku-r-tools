@@ -27,10 +27,17 @@ class Packrat():
         if not os.path.isdir(ln_source):
             sys.exit("'" + ln_source + "' not found.")
 
-        for e in self.libs:
-            if os.path.islink(e) or not os.path.isdir(e):
+        source_libs = [os.path.normpath(ln_source + "/" + e)
+                    for e in fnmatch.filter(os.listdir(ln_source),
+                    "lib*"
+                )
+            ]
+
+        for e in [os.path.normpath(self.packrat_dir + "/" + os.path.basename(e0)) for e0 in source_libs]:
+
+            if os.path.exists(e) and (os.path.islink(e) or not os.path.isdir(e)):
                 os.remove(e)
-            else:
+            elif os.path.exists(e):
                 shutil.rmtree(e)
             if verbose == True:
                 print("Removed: '" + e + "'.")
