@@ -15,12 +15,16 @@ def cli():
 Use absolute path.',
     required = True,
     show_default = True)
+@click.option('-f', '--force',
+    is_flag = True,
+    help = 'Overwrite existing libraries.')
 @click.option('-v', '--verbose',
     is_flag = True,
     help = 'Print various messages.')
-def ln_packrat_lib(proj_dir, source, verbose):
+def ln_packrat_lib(proj_dir, source, force, verbose):
     packrat = Packrat(proj_dir = proj_dir)
     packrat.ln_lib(ln_source = source,
+        force = force,
         verbose = verbose)
 
 if __name__ == '__main__':

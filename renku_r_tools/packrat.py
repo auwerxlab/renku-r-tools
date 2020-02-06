@@ -21,7 +21,7 @@ class Packrat():
                 )
             ]
 
-    def ln_lib(self, ln_source, verbose):
+    def ln_lib(self, ln_source, force, verbose):
         """Link libraries to another location."""
 
         if not os.path.isdir(ln_source):
@@ -34,13 +34,16 @@ class Packrat():
             ]
 
         for e in [os.path.normpath(self.packrat_dir + "/" + os.path.basename(e0)) for e0 in source_libs]:
-
-            if os.path.exists(e) and (os.path.islink(e) or not os.path.isdir(e)):
-                os.remove(e)
-            elif os.path.exists(e):
-                shutil.rmtree(e)
-            if verbose == True:
-                print("Removed: '" + e + "'.")
+            if os.path.exists(e):
+                if force == True:
+                    if os.path.islink(e) or not os.path.isdir(e):
+                        os.remove(e)
+                    else:
+                        shutil.rmtree(e)
+                    if verbose == True:
+                        print("Removed: '" + e + "'.")
+                else:
+                    sys.exit("'" + e + "' already exists. Use --force to overwrite existing libraries.")
             os.symlink(
                 os.path.normpath(
                     ln_source + "/" + os.path.basename(e)
