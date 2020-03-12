@@ -3,9 +3,19 @@ from renku_r_tools.packrat import Packrat
 
 @click.group()
 def cli():
+    """ \b
+A toolbox to work with R projects on Renku
+    """
     pass
 
-@cli.command(help = 'Link packrat libraries to another location.')
+@cli.group()
+def packrat():
+    """ \b
+Commands for the packrat package
+    """
+    pass
+
+@packrat.command(help = 'Link packrat libraries to another location.')
 @click.option('-p', '--proj_dir',
     help = 'R project main directory path. Use absolute path.',
     required = True)
@@ -21,7 +31,7 @@ Use absolute path.',
 @click.option('-v', '--verbose',
     is_flag = True,
     help = 'Print various messages.')
-def ln_packrat_lib(proj_dir, source, force, verbose):
+def use_lib_links(proj_dir, source, force, verbose):
     packrat = Packrat(proj_dir = proj_dir)
     packrat.ln_lib(ln_source = source,
         force = force,

@@ -83,7 +83,10 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">renku_r_tools.packrat CLI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#renku-r">renku-r</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#renku-r-ln-packrat-lib">ln-packrat-lib</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renku-r-packrat">packrat</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#renku-r-packrat-use-lib-links">use-lib-links</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -137,34 +140,52 @@
 <h1>renku_r_tools.packrat CLI<a class="headerlink" href="#renku-r-tools-packrat-cli" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="renku-r">
 <h2>renku-r<a class="headerlink" href="#renku-r" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">A toolbox to work with R projects on Renku</div>
+</div>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>renku-r <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
 </pre></div>
 </div>
-<div class="section" id="renku-r-ln-packrat-lib">
-<h3>ln-packrat-lib<a class="headerlink" href="#renku-r-ln-packrat-lib" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="renku-r-packrat">
+<h3>packrat<a class="headerlink" href="#renku-r-packrat" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Commands for the packrat package</div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>renku-r packrat <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<div class="section" id="renku-r-packrat-use-lib-links">
+<h4>use-lib-links<a class="headerlink" href="#renku-r-packrat-use-lib-links" title="Permalink to this headline">¶</a></h4>
 <p>Link packrat libraries to another location.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>renku-r ln-packrat-lib <span class="o">[</span>OPTIONS<span class="o">]</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>renku-r packrat use-lib-links <span class="o">[</span>OPTIONS<span class="o">]</span>
 </pre></div>
 </div>
 <p class="rubric">Options</p>
 <dl class="option">
-<dt id="cmdoption-renku-r-ln-packrat-lib-p">
-<code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--proj_dir</code><code class="sig-prename descclassname"> &lt;proj_dir&gt;</code><a class="headerlink" href="#cmdoption-renku-r-ln-packrat-lib-p" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-renku-r-packrat-use-lib-links-p">
+<code class="sig-name descname">-p</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--proj_dir</code><code class="sig-prename descclassname"> &lt;proj_dir&gt;</code><a class="headerlink" href="#cmdoption-renku-r-packrat-use-lib-links-p" title="Permalink to this definition">¶</a></dt>
 <dd><p>R project main directory path. Use absolute path.  [required]</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-renku-r-ln-packrat-lib-s">
-<code class="sig-name descname">-s</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--source</code><code class="sig-prename descclassname"> &lt;source&gt;</code><a class="headerlink" href="#cmdoption-renku-r-ln-packrat-lib-s" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-renku-r-packrat-use-lib-links-s">
+<code class="sig-name descname">-s</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--source</code><code class="sig-prename descclassname"> &lt;source&gt;</code><a class="headerlink" href="#cmdoption-renku-r-packrat-use-lib-links-s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Main directory path of the new packrat libraries source. Use absolute path.  [default: /home/rstudio/packrat; required]</p>
 </dd></dl>
 
 <dl class="option">
-<dt id="cmdoption-renku-r-ln-packrat-lib-v">
-<code class="sig-name descname">-v</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--verbose</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-renku-r-ln-packrat-lib-v" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-renku-r-packrat-use-lib-links-f">
+<code class="sig-name descname">-f</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--force</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-renku-r-packrat-use-lib-links-f" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overwrite existing libraries.</p>
+</dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-renku-r-packrat-use-lib-links-v">
+<code class="sig-name descname">-v</code><code class="sig-prename descclassname"></code><code class="sig-prename descclassname">, </code><code class="sig-name descname">--verbose</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-renku-r-packrat-use-lib-links-v" title="Permalink to this definition">¶</a></dt>
 <dd><p>Print various messages.</p>
 </dd></dl>
 
+</div>
 </div>
 </div>
 </div>
