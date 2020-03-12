@@ -1,5 +1,6 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
+VERSION?=''
 
 define PRINT_HELP_PYSCRIPT
 import re, sys
@@ -34,13 +35,17 @@ docs: ## generate Sphinx HTML documentation, including API docs
 	rm -fr docs/_build/*
 	$(MAKE) -C docs html
 
-release: dist ## package and upload a release
+pypi-release: dist ## package and upload a release
 	twine upload dist/*
 
 dist: clean ## builds source and wheel package
+	if [ $(VERSION) != '' ]; then \
+	sed -i "s/^release_version = .*/release_version = '$(VERSION)'/g" setup.py; \
+	fi
 	python3 setup.py sdist
 	python3 setup.py bdist_wheel
 	ls -l dist
 
 install: clean ## install the package to the active Python's site-packages
 	python3 setup.py install
+
