@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-release_version = '0.1.0'
+release_version = '0.0.4'
 
 setup(
     name = 'renku-r-tools',
